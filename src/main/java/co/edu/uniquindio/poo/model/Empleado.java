@@ -14,6 +14,10 @@ public class Empleado {
         this.reservas = new ArrayList<>();
     }
 
+    public void agregarReserva(Reserva reserva) {
+        reservas.add(reserva);
+    }
+
     public String getNombre() {
         return nombre;
     }
@@ -48,7 +52,7 @@ public class Empleado {
 
     @Override
     public String toString() {
-        return "Empleado [nombre=" + nombre + ", id=" + id + ", email=" + email + ", reservas=" + reservas + "]";
+        return "Empleado [nombre=" + nombre + ", id=" + id + ", email=" + email + ";";
     }
 
 }

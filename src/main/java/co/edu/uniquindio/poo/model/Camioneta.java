@@ -1,6 +1,5 @@
 package co.edu.uniquindio.poo.model;
 
-import java.time.LocalDate;
 
 public class Camioneta extends Vehiculo{
      private double capacidadCarga;
@@ -12,6 +11,14 @@ public class Camioneta extends Vehiculo{
         this.porcentajeExtra = 0.05;
     }
 
+    @Override
+    public double calcularCosto(int dias) {
+        double costo = 0;
+        costo = (getTarifaBase() + (capacidadCarga * porcentajeExtra)) * dias;
+        return costo;
+    
+    }
+
     public double getCapacidadCarga() {
         return capacidadCarga;
     }
@@ -20,11 +27,20 @@ public class Camioneta extends Vehiculo{
         this.capacidadCarga = capacidadCarga;
     }
 
-    @Override
-    public double calcularCosto(int dias) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'calcularCosto'");
+    public double getPorcentajeExtra() {
+        return porcentajeExtra;
     }
+
+    public void setPorcentajeExtra(double porcentajeExtra) {
+        this.porcentajeExtra = porcentajeExtra;
+    }
+
+    @Override
+    public String toString() {
+        return "Camioneta: Capacidad Carga: " + capacidadCarga + ", Porcentaje Extra " + porcentajeExtra + super.toString() +".";
+    }
+
+    
 
 
     

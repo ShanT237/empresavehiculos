@@ -1,12 +1,10 @@
 package co.edu.uniquindio.poo.model;
 
-import java.time.LocalDate;
-
 public abstract class Vehiculo {
     private String matricula, marca, modelo;
     private int anioFabricacion;
     private double tarifaBase;
-    
+
     public Vehiculo(String matricula, String marca, String modelo, int anioFabricacion) {
         this.matricula = matricula;
         this.marca = marca;
@@ -41,7 +39,6 @@ public abstract class Vehiculo {
         this.modelo = modelo;
     }
 
-  
     public double getTarifaBase() {
         return tarifaBase;
     }
@@ -58,6 +55,10 @@ public abstract class Vehiculo {
         this.anioFabricacion = anioFabricacion;
     }
 
-    
-    
+    @Override
+    public String toString() {
+        return "Vehiculo: Matricula " + matricula + ", Marca " + marca + ", Modelo " + modelo + ", Año de Frabricación "
+                + anioFabricacion + ", Tarifa Base " + tarifaBase + ".";
+    }
+
 }

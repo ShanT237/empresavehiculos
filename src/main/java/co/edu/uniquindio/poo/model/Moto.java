@@ -1,7 +1,5 @@
 package co.edu.uniquindio.poo.model;
 
-import java.time.LocalDate;
-
 public class Moto extends Vehiculo {
     private boolean esAutomatica;
     private double tarifaAdicional;
@@ -10,6 +8,19 @@ public class Moto extends Vehiculo {
         super(matricula, marca, modelo, anioFabricacion);
         this.esAutomatica = esAutomatica;
         this.tarifaAdicional = 10.00;
+    }
+
+    @Override
+    public double calcularCosto(int dias) {
+        double costo = 0;
+        if (esAutomatica) {
+            costo = dias * (tarifaAdicional + getTarifaBase());
+
+        } else {
+            costo = dias * getTarifaBase();
+
+        }
+        return costo;
     }
 
     public boolean isEsAutomatica() {
@@ -29,11 +40,9 @@ public class Moto extends Vehiculo {
     }
 
     @Override
-    public double calcularCosto(int dias) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'calcularCosto'");
+    public String toString() {
+        return "Moto: Es Automatica: " + esAutomatica + ", Tarifa Adicional: " + tarifaAdicional + super.toString()
+                + ".";
     }
 
-    
-    
 }

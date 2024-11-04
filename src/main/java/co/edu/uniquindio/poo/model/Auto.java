@@ -1,18 +1,22 @@
 package co.edu.uniquindio.poo.model;
 
-import java.time.LocalDate;
 
 public class Auto extends Vehiculo {
 
     private int numeroPuertas;
-
 
     public Auto(String matricula, String marca, String modelo, int anioFabricacion, int numeroPuertas) {
         super(matricula, marca, modelo, anioFabricacion);
         this.numeroPuertas = numeroPuertas;
     }
 
-    
+    @Override
+    public double calcularCosto(int dias) {
+        double costo = 0;
+        costo = dias * getTarifaBase();
+        return costo;
+
+    }
 
     public int getNumeroPuertas() {
         return numeroPuertas;
@@ -22,12 +26,11 @@ public class Auto extends Vehiculo {
         this.numeroPuertas = numeroPuertas;
     }
 
-
-
     @Override
-    public double calcularCosto(int dias) {
-        return dias;
-        
+    public String toString() {
+        return "Auto: Numero Puertas " + numeroPuertas + super.toString() + ".";
     }
+
+    
 
 }

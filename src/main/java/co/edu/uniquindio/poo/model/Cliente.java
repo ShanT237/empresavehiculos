@@ -21,6 +21,11 @@ public class Cliente {
         return email;
     }
 
+    @Override
+    public String toString() {
+        return "Cliente [nombre=" + nombre + ", id=" + id + ", email=" + email + "]";
+    }
+
     
     
 }

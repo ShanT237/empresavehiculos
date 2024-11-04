@@ -1,8 +1,5 @@
 package co.edu.uniquindio.poo.viewController;
 
-import java.net.URL;
-import java.util.ResourceBundle;
-
 import co.edu.uniquindio.poo.App;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -39,9 +36,13 @@ public class PrimaryViewController {
                 : "fx:id=\"nombreEmpleadoPanel\" was not injected: check your FXML file 'Primary.fxml'.";
     }
 
-    // Método para recibir el nombre del empleado y mostrarlo en el Label
     public void setNombreEmpleado(String nombreEmpleado) {
         nombreEmpleadoPanel.setText(nombreEmpleado);
     }
 
+    @FXML
+    private void handleGestionarAlquiler() {
+        app.openGestionReserva();
+    }
 }
+
